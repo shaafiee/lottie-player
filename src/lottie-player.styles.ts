@@ -3,6 +3,8 @@ import { css } from 'lit-element';
 export default css`
 * {
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 :host {
@@ -14,17 +16,13 @@ export default css`
   --lottie-player-seeker-track-color: #CCC;
   --lottie-player-seeker-thumb-color: rgba(0, 107, 120, 0.8);
 
-  display: block;
-  width: 100%;
-  height: 100%;
+  display: inline-block;
 }
 
 .main {
-  box-sizing: border-box;
-  display: inline-grid;
+  display: grid;
   grid-auto-columns: auto;
   grid-template-rows: auto;
-  position: relative;
   height: inherit;
   width: inherit;
 }
@@ -34,13 +32,16 @@ export default css`
 }
 
 .animation {
-  overflow: hidden;
-  height: calc(1fr - var(--lottie-player-toolbar-height));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: inherit;
+  height: inherit;
 }
 
 .toolbar {
   display: grid;
-  grid-template-columns: 32px 32px 1fr 32px 32px;
+  grid-template-columns: 32px 32px 1fr 32px;
   align-items: center;
   justify-items: center;
   background-color: var(--lottie-player-toolbar-background-color);
