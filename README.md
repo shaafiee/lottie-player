@@ -18,6 +18,10 @@ Note: The Telegram Sticker TGS player has been moved to it's own [GitHub reposit
 - [Basic usage examples](https://codesandbox.io/s/y2nxyvomyj)
 - [Scrolling effects demo](https://ypxk7zvpq1.codesandbox.io/)
 
+## Documentation
+
+- [Documentation](https://lottiefiles.github.io/lottie-player/)
+
 ## Installation
 
 #### In HTML, import from CDN or from the local Installation:
@@ -35,14 +39,14 @@ Note: The Telegram Sticker TGS player has been moved to it's own [GitHub reposit
 ````html
 <script src="/node_modules/@lottiefiles/lottie-player/dist/lottie-player.js"></script>
 
-#### In Javascript or TypeScript: 1. Install package using npm or yarn. ```shell
-npm install --save @lottiefiles/lottie-player
+#### In Javascript or TypeScript: 1. Install package using npm or yarn. ```shell npm install --save
+@lottiefiles/lottie-player
 ````
 
 2. Import package in your code.
 
 ```javascript
-import "@lottiefiles/lottie-player";
+import '@lottiefiles/lottie-player';
 ```
 
 ## Usage
@@ -66,18 +70,15 @@ Add the element `lottie-player` and set the `src` property to a URL pointing to 
 You may set and load animations programatically as well.
 
 ```html
-<lottie-player autoplay controls loop mode="normal" style="width: 320px">
-</lottie-player>
+<lottie-player autoplay controls loop mode="normal" style="width: 320px"> </lottie-player>
 ```
 
 ```js
-const player = document.querySelector("lottie-player");
-player.load("https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json");
+const player = document.querySelector('lottie-player');
+player.load('https://assets3.lottiefiles.com/packages/lf20_UJNc2t.json');
 
 // or load via a Bodymovin JSON string/object
-player.load(
-  '{"v":"5.3.4","fr":30,"ip":0,"op":38,"w":315,"h":600,"nm":"new", ... }'
-);
+player.load('{"v":"5.3.4","fr":30,"ip":0,"op":38,"w":315,"h":600,"nm":"new", ... }');
 ```
 
 ## Properties
