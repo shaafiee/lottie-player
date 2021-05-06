@@ -219,29 +219,24 @@ export class LottiePlayer extends LitElement {
         do {
             result = re.exec(src);
             if (result) {
-                //console.log(result);
                 var found;
                 found = result[0].match(/xmlhttprequest/sgi);
                 if (found) {
-                    console.log(found);
                     threat = true;
                     break;
                 }
                 found = result[0].match(/fetch\(/sgi);
                 if (found) {
-                    console.log(found);
                     threat = true;
                     break;
                 }
                 found = result[0].match(/axios\./sgi);
                 if (found) {
-                    console.log(found);
                     threat = true;
                     break;
                 }
                 found = result[0].match(/ajax\(/sgi);
                 if (found) {
-                    console.log(found);
                     threat = true;
                     break;
                 }
