@@ -211,6 +211,43 @@ export class LottiePlayer extends LitElement {
 
     // Load the resource information
     try {
+
+      var threat = false;
+      if (typeof src === "object") {
+      } else {
+        var re = /"x"\s*?:\s*?".*?"/sgi;
+        var result;
+        do {
+            result = re.exec(src);
+            if (result) {
+                var found;
+                found = result[0].match(/xmlhttprequest/sgi);
+                if (found) {
+                    threat = true;
+                    break;
+                }
+                found = result[0].match(/fetch\(/sgi);
+                if (found) {
+                    threat = true;
+                    break;
+                }
+                found = result[0].match(/axios\./sgi);
+                if (found) {
+                    threat = true;
+                    break;
+                }
+                found = result[0].match(/ajax\(/sgi);
+                if (found) {
+                    threat = true;
+                    break;
+                }
+            }
+        } while (result);
+      }
+      if (threat) {
+        throw "Vulnerable";
+      }
+      
       const srcParsed = parseSrc(src);
       const srcAttrib =
         typeof srcParsed === "string" ? "path" : "animationData";
